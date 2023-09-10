@@ -21,7 +21,6 @@
     "eslint-config-next": "13.4.19",
     "js-quantities": "^1.8.0",
     "next": "13.4.19",
-    "openapi-typescript-codegen": "git://github.com/ferdikoomen/openapi-typescript-codegen.git#8379bfeb3201c41b1462f42f3b82bb54fda3bd5a",
     "postcss": "8.4.29",
     "react": "18.2.0",
     "react-dom": "18.2.0",

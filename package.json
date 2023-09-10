@@ -1,0 +1,35 @@
+{
+  "name": "wylion",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@bybas/weather-icons": "^2.0.0",
+    "@svgr/webpack": "^8.1.0",
+    "@types/js-quantities": "^1.6.3",
+    "@types/node": "20.6.0",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "autoprefixer": "10.4.15",
+    "daisyui": "^3.7.3",
+    "eslint": "8.49.0",
+    "eslint-config-next": "13.4.19",
+    "js-quantities": "^1.8.0",
+    "next": "13.4.19",
+    "openapi-typescript-codegen": "git://github.com/ferdikoomen/openapi-typescript-codegen.git#8379bfeb3201c41b1462f42f3b82bb54fda3bd5a",
+    "postcss": "8.4.29",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-use": "^17.4.0",
+    "react-use-promise": "^0.5.0",
+    "tailwindcss": "3.3.3",
+    "theme-change": "^2.5.0",
+    "typescript": "5.2.2",
+    "use-http": "^1.0.28"
+  }
+}

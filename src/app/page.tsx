@@ -78,7 +78,7 @@ function DailyCard(props: DayToDayWeather): JSX.Element {
             ""
           ) : (
             <>
-              {precipitationSum.to("in").scalar.toFixed(1)}" over{" "}
+              {precipitationSum.to("in").scalar.toFixed(1)}&quot; over{" "}
               {props.precipitationHours.to("h").scalar}hr
             </>
           )}

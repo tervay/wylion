@@ -30,6 +30,13 @@ export type HourlyResponse = {
     evapotranspiration?: Array<number>;
     precipitation?: Array<number>;
     weathercode?: Array<number>;
+    snowfall?: Array<number>;
+    precipitation_probability?: Array<number>;
+    rain?: Array<number>;
+    showers?: Array<number>;
+    visibility?: Array<number>;
+    snow_depth?: Array<number>;
+    is_day?: Array<boolean>;
     snow_height?: Array<number>;
     freezinglevel_height?: Array<number>;
     soil_temperature_0cm?: Array<number>;

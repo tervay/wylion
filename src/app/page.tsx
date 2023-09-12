@@ -52,6 +52,7 @@ function HourlyInfo(props: { hourly: DayToDayWeather["hourly"] }): JSX.Element {
   const bgCss = isDateToday(props.hourly.time[0])
     ? "bg-base-100"
     : "bg-base-200";
+  const now = new Date();
   return (
     <div
       className={`flex mx-auto max-w-screen-lg items-center rounded-xl p-4 shadow-lg collapse border border-base-300 ${bgCss}`}
@@ -72,41 +73,43 @@ function HourlyInfo(props: { hourly: DayToDayWeather["hourly"] }): JSX.Element {
           <tbody>
             {/* row 1 */}
 
-            {[...Array(24).keys()].map((i) => (
-              <tr key={i}>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <WeatherCodeSVG
-                          isDay={props.hourly.is_day[i]}
-                          weatherCode={props.hourly.weathercode[i]}
-                        />
+            {[...Array(24).keys()]
+              .filter((i) => props.hourly.time[i] >= now)
+              .map((i) => (
+                <tr key={i}>
+                  <td>
+                    <div className="flex items-center space-x-3">
+                      <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12">
+                          <WeatherCodeSVG
+                            isDay={props.hourly.is_day[i]}
+                            weatherCode={props.hourly.weathercode[i]}
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </td>
-                <td>
-                  <div>
-                    <div className="font-bold">
-                      {timeOfDay(props.hourly.time[i])}
+                  </td>
+                  <td>
+                    <div>
+                      <div className="font-bold">
+                        {timeOfDay(props.hourly.time[i])}
+                      </div>
                     </div>
-                  </div>
-                </td>
-                <td>
-                  {props.hourly.apparent_temperature[i]
-                    .to("tempF")
-                    .scalar.toFixed(0)}
-                </td>
-                <td>{props.hourly.precipitation_probability[i]}%</td>
-                <td>
-                  {props.hourly.precipitation[i].to("in").scalar.toFixed(2)}
-                  &quot;
-                </td>
-                <td>{props.hourly.relativehumidity_2m[i]}%</td>
-                <td>{props.hourly.cloudcover[i]}%</td>
-              </tr>
-            ))}
+                  </td>
+                  <td>
+                    {props.hourly.apparent_temperature[i]
+                      .to("tempF")
+                      .scalar.toFixed(0)}
+                  </td>
+                  <td>{props.hourly.precipitation_probability[i]}%</td>
+                  <td>
+                    {props.hourly.precipitation[i].to("in").scalar.toFixed(2)}
+                    &quot;
+                  </td>
+                  <td>{props.hourly.relativehumidity_2m[i]}%</td>
+                  <td>{props.hourly.cloudcover[i]}%</td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
